@@ -27,10 +27,20 @@
   </header>
   <section>
     <form class="center" id="form">
-      <label for="fname">First Name</label>
-      <input type="text" id="fname" name="fname">
-
-      <label for="activity">Activity Type</label>
+      <label for="formName">Your Name:</label>
+      <input type="text" id="formName" name="formName" placeholder="Enter your own name">
+      
+      <!-- <select name="age" id="age">
+        <option value=""></option>
+        <option value=""></option>
+        <option value=""></option>
+        <option value=""></option>
+        <option value=""></option>
+        <option value=""></option>
+        <option value=""></option>
+      </select> -->
+  
+      <label for="activity">How do you like to spend your free time?</label>
       <select name="type" id="activity">
         <option value="education">Education</option>
         <option value="recreational">Recreational</option>
@@ -42,23 +52,30 @@
         <option value="music">Music</option>
         <option value="busywork">Life Admin</option>
       </select>
+  
+      <label for="activity">Enter your favourite music genre, artist or band</label>
+      <input type="text" name="favBand" id="favBand" placeholder="Enter artist/band/genre">
+  
       <button type="submit">
         Submit
       </button>
     </form>
   </section>
 
-  <h2>Here's your matches:</h2>
+  <h2 id=usersName></h2>
   <section class="center width-sm" id="profile">
     <div id="userProfile">
       <div id="namePart">
-        <img src="cat.jpeg" alt="user">
+        <img id="matchPhoto" src="" alt="A photo of your match">
        <div>
-        <p id="userName">Name</p>
-        <p id="age">26</p>
+        <h3 id="matchName"></h3>
+        <p>Age: <span id="matchAge"></span></p>
        </div>
-      </div>
-      <p id="todo"></p>
+       <p>If I had time I would: <span id="matchHobby"></span></p>
+       <p>Favourite Music:<span id="matchArtist"></span></p>
+       <p>Favourite Song:<span id="matchSong"></span></p>
+       <p>Favoutite Joke: </p>
+       <p>Pet Lover: </p>
     </div>
     
   </section>
