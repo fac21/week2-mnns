@@ -1,3 +1,4 @@
+
 /* The layout primitives for you to use */
 
 .center {
@@ -84,4 +85,84 @@ img {
   display: block;
   max-width: 100%;
   height: auto;
+}
+
+
+/************************************************/
+body{
+  width: 100vw;
+  height: 100vh;
+  font-family: 'Playfair Display', serif;
+  margin: 0;
+}
+header{
+  width: 100vw;
+  height: 15vh;
+  background-color: pink;
+  display: flex;
+  justify-items: center;
+
+}
+header div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+header p{
+  margin: 0;
+  font-family: 'Dancing Script', cursive;
+}
+header h1{
+  font-size: 1rem;
+}
+
+#form{
+  width: 100vw;
+  height: 35vh;
+  border: 1px red solid;
+}
+#profile{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 45vh;
+}
+ h2{
+  font-size: 1rem;
+  text-align: center;
+}
+#userProfile{
+  width: 85%;
+  background-color: rgb(116, 124, 124);
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+#namePart{
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  align-items: center;
+  margin-top: 1rem;
+
+}
+#profile div img{
+  width:8rem;
+  height: 8rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+@media (min-width: 640px){
+  #profile{
+    width: 45%;
+  }
+}
+@media (min-width: 1024px){
+  #profile{
+    width: 25%;
+   
+  }
 }

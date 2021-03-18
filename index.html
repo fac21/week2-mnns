@@ -1,41 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Playfair+Display&display=swap"
+    rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+
   <title>Identity Crisis</title>
 </head>
+
 <body>
+  <header>
+    <img src="heart.svg" alt="heart">
+    <div>
+      <h1>Dating app</h1>
+      <p>find your perfect match</p>
+    </div>
+  </header>
+  <section>
+    <form id="form">
+      <label for="fname">First Name</label>
+      <input type="text" id="fname" name="fname">
 
-<form>
-  
-  <label for="fname">First Name</label>
-  <input type="text" id="fname" name="fname">
-  
-  <label for="activity">Activity Type</label>
-  <select name="type" id="activity">
-    <option value="education">Education</option>
-    <option value="recreational">Recreational</option>
-    <option value="social">Social</option>
-    <option value="diy">DIY</option>
-    <option value="charity">Charity</option>
-    <option value="cooking">Cooking</option>
-    <option value="relaxation">Relaxation</option>
-    <option value="music">Music</option>
-    <option value="busywork">Life Admin</option>
-  </select>
-  <button type="submit">
-    Submit
-  </button>
-</form>
+      <label for="activity">Activity Type</label>
+      <select name="type" id="activity">
+        <option value="education">Education</option>
+        <option value="recreational">Recreational</option>
+        <option value="social">Social</option>
+        <option value="diy">DIY</option>
+        <option value="charity">Charity</option>
+        <option value="cooking">Cooking</option>
+        <option value="relaxation">Relaxation</option>
+        <option value="music">Music</option>
+        <option value="busywork">Life Admin</option>
+      </select>
+      <button type="submit">
+        Submit
+      </button>
+    </form>
+  </section>
 
-<div id="profile">
-  <p id="userName"></p>
-  <p id="age"></p>
-  <p id="todo"></p>
+  <h2>Here's your matches:</h2>
+  <section id="profile">
+    <div id="userProfile">
+      <div id="namePart">
+        <img src="cat.jpeg" alt="user">
+       <div>
+        <p id="userName">Name</p>
+        <p id="age">26</p>
+       </div>
+      </div>
+      <p id="todo"></p>
+    </div>
+    
+  </section>
 
-</div>
+
+
 
   <script src="script.js"></script>
 </body>
