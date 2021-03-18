@@ -4,7 +4,7 @@ const form = document.querySelector('form');
 
 //const button = form.querySelector('button');
 
-const activity = document.getElementById("todo");
+const todo = document.getElementById("todo");
 
 //EVENT LISTENERS
 
@@ -14,7 +14,7 @@ form.addEventListener('submit', (e) => {
     const data = Object.fromEntries(formData);
     fetch(`https://www.boredapi.com/api/activity?type=${data.type}`)
     .then((response) => response.json())
-    .then((json) => writeText(activity, json.activity))
+    .then((json) => writeText(todo, json.activity))
 })
 
 function writeText(element, text) {
