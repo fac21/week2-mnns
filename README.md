@@ -14,7 +14,7 @@ Display for Lyrics: Top Tracks, image of Cover, link to lyrics)
 
 2. 1 hr Working on Musixmatch and Recipe Puppy API
 - Ran into problems 
-# Errors Errors Errors 
+### Errors Errors Errors 
 - Nafisa and Neville faced errors CORS: Refused to execute http://127.0.0.1:5500/script as script because "X-Content-Type: nosniff" was given and its Content-Type is not a script MIME type.
 - Saki and Maryam faced different error messages: No 'access-control-allow-origin' header is present on the requested resource
 
