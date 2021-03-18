@@ -10,6 +10,9 @@ const matchAge = document.getElementById("matchAge");
 const matchHobby = document.getElementById("matchHobby");
 const matchArtist = document.getElementById("matchArtist");
 const matchSong = document.getElementById("matchSong");
+const matchJoke = document.getElementById("matchJoke");
+const matchCocktail = document.getElementById("matchCocktail");
+const errorMessage = "Sorry, database not loading";
 
 let data = {};
 let formData = {};
@@ -25,6 +28,7 @@ form.addEventListener('submit', (e) => {
     grabPerson();
     grabActivity();
     grabSong();
+    grabJoke();
 })
 
 
@@ -40,40 +44,79 @@ function writeText(element, text) {
 
 function grabActivity(){
     fetch(`https://www.boredapi.com/api/activity?type=${data.type}`)
-    .then((response) => response.json())
+    .then((response) => {
+        if (!response.ok){
+           throw new Error(response.status);
+         } else {
+           return response.json();
+         }})
     .then((json) => writeText(matchHobby, json.activity))
+    .catch(() => writeText(matchHobby, errorMessage));
 }
 
 function grabPerson() {
     fetch('https://randomuser.me/api/')
-    .then((response) => response.json())
+    .then((response) => {
+        if (!response.ok){
+           throw new Error(response.status);
+         } else {
+           return response.json();
+         }})
+    //.then((response) => response.json())
     .then((json) => json.results[0])
     .then((results) => {
         writeText(matchName, results.name.first);
         writeText(matchAge, results.dob.age);
         matchPhoto.src = results.picture.large;
     })
+    .catch(() => {
+        writeText(matchName, errorMessage);
+        writeText(matchAge, errorMessage);
+    });
 }
 
 function grabSong(){
     //let bandSearch = favBand.innerText.split('').joint('+');
-    console.log(favBand);
     fetch(`https://itunes.apple.com/search?term=${favBand.value}&limit=5`)
-    .then((response) => response.json())
+    .then((response) => {
+        if (!response.ok){
+           throw new Error(response.status);
+         } else {
+           return response.json();
+         }})
+    //.then((response) => response.json())
     .then((json) => json.results[0])
     .then((results) => {
-        console.log(results);
         writeText(matchArtist, results.artistName);
         writeText(matchSong, results.trackName);
     })
+    .catch(() => writeText(matchArtist, errorMessage));
 }
 
-/*fetch('https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita')
-.then((response) => response.json())
-.then((response) => console.log(response))
-
-fetch('https://api.imgflip.com/get_memes')
-.then((response) => response.json())
-.then((response) => console.log(response))*/
+function grabJoke(){
+    fetch(`https://v2.jokeapi.dev/joke/Any`)
+    .then((response) => {
+        if (!response.ok){
+           throw new Error(response.status);
+         } else {
+           return response.json();
+         }})
+    //.then((response) => response.json())
+    .then((json) => {
+        console.log(json);
+        if(json.flags.racist === true || json.flags.sexist){
+            writeText(matchJoke, `This joke has been deemed inappropriate by this site`);
+        }
+        else if(json.joke) {
+            writeText(matchJoke, json.joke);
+        }
+        else{
+            const concat = `${json.setup} ${json.delivery}`;
+            writeText(matchJoke, concat);
+        }
+    })
+    .catch(() => writeText(matchHobby, errorMessage));
+    
+}
 
 
