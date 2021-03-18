@@ -7,12 +7,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Playfair+Display&display=swap"
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Playfair+Display&display=swap
     rel="stylesheet">
 
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
 
-  <title>Identity Crisis</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+ <title>Dating app</title>
 </head>
 
 <body>
@@ -22,48 +22,36 @@
     <div>
       <h1>Dating app</h1>
       <p>find your perfect match</p>
-    </div>
-  </div>
-  </header>
-  <h2>Tell us about yourself</h2>
-  <section>
+      </div>
+        </div>
+      </header>
+    <section>                                
     <form class="center" id="form">
-      <label for="formName">Your Name:</label>
-      <input type="text" id="formName" name="formName" placeholder="Enter your own name">
-      
-      <!-- <select name="age" id="age">
-        <option value=""></option>
-        <option value=""></option>
-        <option value=""></option>
-        <option value=""></option>
-        <option value=""></option>
-        <option value=""></option>
-        <option value=""></option>
-      </select> -->
-  
-      <label for="activity">How do you like to spend your free time?</label>
-      <select name="type" id="activity">
-        <option value="education">Education</option>
-        <option value="recreational">Recreational</option>
-        <option value="social">Social</option>
-        <option value="diy">DIY</option>
-        <option value="charity">Charity</option>
-        <option value="cooking">Cooking</option>
-        <option value="relaxation">Relaxation</option>
-        <option value="music">Music</option>
-        <option value="busywork">Life Admin</option>
-      </select>
-  
-      <label for="activity">Enter your favourite music genre, artist or band</label>
-      <input type="text" name="favBand" id="favBand" placeholder="Enter artist/band/genre">
-  
-      <button type="submit">
-        Submit
-      </button>
-    </form>
-  </section>
+    <label for="formName">Your Name:</label>
+    <input type="text" id="formName" name="formName" placeholder="Enter your own name" required>
 
-  <h2 id=usersName>&hearts; &hearts; &hearts; &hearts; &hearts;</h2>
+    <label for="activity">How do you like to spend your free time?</label>
+    <select name="type" id="activity">
+      <option value="education">Education</option>
+      <option value="recreational">Recreational</option>
+      <option value="social">Social</option>
+      <option value="diy">DIY</option>
+      <option value="charity">Charity</option>
+      <option value="cooking">Cooking</option>
+      <option value="relaxation">Relaxation</option>
+      <option value="music">Music</option>
+    </select>
+
+    <label for="activity">Enter your favourite music genre, artist or band</label>
+    <input type="text" name="favBand" id="favBand" placeholder="Enter artist/band/genre" required>
+
+    <button type="submit">
+      Submit
+    </button>
+  </form>
+  </section>
+                         
+<h2 id=usersName>&hearts; &hearts; &hearts; &hearts; &hearts;</h2>
   <section id="profile">
     <div class="center" id="userProfile">
       <div id="namePart">
@@ -77,12 +65,15 @@
       <p>If I had time I would: <span id="matchHobby"></span></p>
       <p>Favourite Music: <span id="matchArtist"></span></p>
       <p>Favourite Song: <span id="matchSong"></span></p>
-      <p>Favoutite Joke: </p>
-      <p>Pet Lover: </p>
+       <p>Sense of Humour: <span id="matchJoke"></span></p>
     </div>
    
     </div>
   </section>
+
+
+
+  
 
 
 
