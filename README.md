@@ -23,3 +23,6 @@ Display for Lyrics: Top Tracks, image of Cover, link to lyrics
 - Saki and Maryam faced different error messages: No 'access-control-allow-origin' header is present on the requested resource
 
 ### Got new API lists 
+
+### Notes 
+- Accidentally pushed to main instead of pushing on branch. How to sort? 
