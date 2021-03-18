@@ -1,21 +1,24 @@
-fetch('https://randomuser.me/api/')
-.then((response) => response.json())
-.then((response) => console.log(response))
+const submitButton = document.querySelector("button")
+let ageParagraph = document.getElementById("age")
+let userName= document.getElementById("userName")
 
-fetch('https://www.boredapi.com/api/activity')
+/* fetch('https://www.boredapi.com/api/activity')
 .then((response) => response.json())
-.then((response) => console.log(response))
+.then((response) => console.log(response))*/
 
-fetch('https://api.agify.io?name=tropical')
+function grabAge(){
+let inputValue = document.getElementById("fname").value
+userName.innerHTML = inputValue
+fetch("https://api.agify.io?name="+inputValue)
 .then((response) => response.json())
-.then((response) => console.log(response))
+ /*.then((response) => console.log(response))*/
+.then((response)=> {
+    let result= response.age
+    ageParagraph.innerHTML = result
+})
+}
 
-fetch('https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita')
-.then((response) => response.json())
-.then((response) => console.log(response))
+submitButton.addEventListener('click', grabAge)
 
-fetch('https://api.imgflip.com/get_memes')
-.then((response) => response.json())
-.then((response) => console.log(response))
 
 
