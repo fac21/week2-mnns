@@ -1,3 +1,4 @@
+
 /* The layout primitives for you to use */
 
 .center {
@@ -85,3 +86,86 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+
+/************************************************/
+body{
+  width: 100vw;
+  height: 100vh;
+  font-family: 'Playfair Display', serif;
+  margin: 0;
+}
+header{
+  width: 100vw;
+  height: 15vh;
+  background-color: pink;
+  display: flex;
+  justify-items: center;
+}
+.header{
+  display: flex;
+  justify-items: center;
+}
+.header div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.header p{
+  margin: 0;
+  font-family: 'Dancing Script', cursive;
+}
+.header h1{
+  font-size: 1rem;
+}
+
+#form{
+  width: 100vw;
+  height: 35vh;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
+
+#profile{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+ h2{
+  font-size: 1rem;
+  text-align: center;
+  margin: 0.5rem 0;
+}
+#userProfile{
+  background-color: rgb(233, 175, 199);
+  width: 80%;
+  
+  display: flex;
+  flex-direction: column;
+  margin: 1rem auto;
+  padding: 1rem;
+}
+#namePart{
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  align-items: center;
+  /* margin-top: 0.4rem; */
+
+}
+#profile div img{
+  width:8rem;
+  height: 8rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+#detailsPart{
+  margin-top: 1rem;
+}
+
