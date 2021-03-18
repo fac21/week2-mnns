@@ -4,15 +4,41 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Karaoke Kitchen</title>
+  <title>Identity Crisis</title>
 </head>
 <body>
-  <label for="fname">First Name</label>
-<input type="text" id="fname" name="fname">
-<button type="submit">Submit</button>
 
-<p id="userName"></p>
-<p id="age"></p>
+<form>
+  
+   <label for="fname">First Name</label>
+    <input type="text" id="fname" name="fname">
+    <p id="userName"></p>
+    <p id="age"></p>
+  
+  <label for="activity">Activity Type</label>
+  <select name="type" id="activity">
+    <option value="education">Education</option>
+    <option value="recreational">Recreational</option>
+    <option value="social">Social</option>
+    <option value="diy">DIY</option>
+    <option value="charity">Charity</option>
+    <option value="cooking">Cooking</option>
+    <option value="relaxation">Relaxation</option>
+    <option value="music">Music</option>
+    <option value="busywork">Life Admin</option>
+  </select>
+  <button type="submit">
+    Submit
+  </button>
+</form>
+
+<div id="profile">
+  
+  <p id="todo">
+  </p>
+
+</div>
+
   <script src="script.js"></script>
 </body>
 
