@@ -25,10 +25,10 @@ form.addEventListener('submit', (e) => {
     formData = new FormData(form);
     data = Object.fromEntries(formData);
     updateResponse();
-    grabPerson();
-    grabActivity();
-    grabSong();
-    grabJoke();
+    grabPerson(data)
+    grabActivity(data);
+    grabSong(data);
+    grabJoke(data);
 })
 
 
@@ -42,7 +42,7 @@ function writeText(element, text) {
     element.innerHTML = text;
 }
 
-function grabActivity(){
+function grabActivity(data){
     fetch(`https://www.boredapi.com/api/activity?type=${data.type}`)
     .then((response) => {
         if (!response.ok){
@@ -54,7 +54,7 @@ function grabActivity(){
     .catch(() => writeText(matchHobby, errorMessage));
 }
 
-function grabPerson() {
+function grabPerson(data) {
     fetch('https://randomuser.me/api/')
     .then((response) => {
         if (!response.ok){
@@ -75,7 +75,7 @@ function grabPerson() {
     });
 }
 
-function grabSong(){
+function grabSong(data){
     //let bandSearch = favBand.innerText.split('').joint('+');
     fetch(`https://itunes.apple.com/search?term=${favBand.value}&limit=5`)
     .then((response) => {
@@ -93,27 +93,17 @@ function grabSong(){
     .catch(() => writeText(matchArtist, errorMessage));
 }
 
-function grabJoke(){
-    fetch(`https://v2.jokeapi.dev/joke/Any`)
+function grabJoke(data){
+    fetch(`https://us-central1-dadsofunny.cloudfunctions.net/DadJokes/random/jokes`)
     .then((response) => {
         if (!response.ok){
            throw new Error(response.status);
          } else {
            return response.json();
          }})
-    //.then((response) => response.json())
     .then((json) => {
-        console.log(json);
-        if(json.flags.racist === true || json.flags.sexist){
-            writeText(matchJoke, `This joke has been deemed inappropriate by this site`);
-        }
-        else if(json.joke) {
-            writeText(matchJoke, json.joke);
-        }
-        else{
-            const concat = `${json.setup} ${json.delivery}`;
-            writeText(matchJoke, concat);
-        }
+        const concat = `${json.setup} ${json.punchline}`
+        writeText(matchJoke, concat)    
     })
     .catch(() => writeText(matchHobby, errorMessage));
     

@@ -83,8 +83,7 @@ ul {
 
 img {
   display: block;
-  max-width: 100%;
-  height: auto;
+  
 }
 
 
@@ -102,9 +101,15 @@ header{
   display: flex;
   justify-items: center;
 }
+
+header img{
+  width: 5rem;
+  height: auto;
+}
+
 .header{
   display: flex;
-  justify-items: center;
+
 }
 .header div{
   display: flex;
